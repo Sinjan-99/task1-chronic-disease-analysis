@@ -42,6 +42,7 @@ A note on the loader
 ucimlrepo returns a dataset in three blocks: features, targets, and sometimes ids. The diabetes data puts encounter_id and patient_nbr in ids. An earlier version joined only features and targets, which dropped patient_nbr and silently disabled the deduplication step above — the row count after cleaning was 99,343 against the 71,518 unique patients the dataset contains. All three blocks are now joined at load time, and assertions check both column presence and expected row reduction so the step cannot fail quietly again.
 
 References
+
 Strack et al. (2014), Impact of HbA1c Measurement on Hospital Readmission Rates, BioMed Research International.
 Saito and Rehmsmeier (2015), The Precision-Recall Plot Is More Informative than the ROC Plot When Evaluating Binary Classifiers on Imbalanced Datasets, PLOS ONE.
 Detrano et al. (1989), International Application of a New Probability Algorithm for the Diagnosis of Coronary Artery Disease, American Journal of Cardiology.
